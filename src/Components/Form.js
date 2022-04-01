@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import Home from './Home'
 
 const Form = ({obituario, setObituario}, props) => {
@@ -10,7 +10,9 @@ const Form = ({obituario, setObituario}, props) => {
             [e.target.name]: e.target.value
         })
 
-    }      
+    }
+    
+    
 
     const handleSubmit = () => {
         // edicion = parseInt(edicion, 10)
@@ -54,14 +56,21 @@ const Form = ({obituario, setObituario}, props) => {
 
     }
 
+    let params = useParams();
+    console.log(params + " PARAMS")
+   
+
+    console.log(params.updateID + " este es el ID de PARAMS");
+
     return(
+        
         <form onSubmit={handleSubmit}>
             <div>
                 <h2>ACTUALIZAR INFORMACION</h2>
             </div>
             <div className="mb-3">
                   <label htmlFor="OCODIGO_CLIENTE" className="form-label">OCODIGO_CLIENTE</label>
-                  <input name="ocodigo_cliente" onChange={handleChange} type="text" id="ocodigo_cliente" className="form-control"/>
+                  <input name="ocodigo_cliente" value= "" onChange={handleChange} type="text" id="ocodigo_cliente" className="form-control"/>
             </div>
             <div className="mb-3">
                   <label htmlFor="ONOMBRES" className="form-label">ONOMBRES</label>
@@ -77,7 +86,7 @@ const Form = ({obituario, setObituario}, props) => {
             </div>
             <div className="mb-3">
                   <label htmlFor="OID" className="form-label">OID</label>
-                  <input name="oid" onChange = {handleChange} type="number" id="OID" className="form-control"/>
+                  <input name="oid" value={params.updateID} onChange = {handleChange} type="number" id="OID" className="form-control"/>
             </div>
             <div className="mb-3">
                   <label htmlFor="ODIR_VELACION" className="form-label">ODIR_VELACION</label>
@@ -124,11 +133,11 @@ const Form = ({obituario, setObituario}, props) => {
                   <input name="estado" onChange = {handleChange} type="number" id="ESTADO" className="form-control"/>
             </div>
             
-            <tr>
-                <td><button type ="submit" className="btn btn-primary">Actualizar</button></td>
-                <td><Link to='../'><button type ="button" classname="btn btn-info">Regresar</button></Link></td>
+            
+                <button type ="submit" className="btn btn-primary">Actualizar</button>
+                <Link to='../'><button type ="button" className="btn btn-info">Regresar</button></Link>
 
-            </tr>
+            
            
         </form>
     )

@@ -15,7 +15,9 @@ function App() {
                   <Router>
                     <Routes>                     
                       <Route exact path='/' element={<Home />} />
-                      <Route exact path='/update' element={<Update />} />
+                      <Route exact path='/update' element={<Update />}>
+                          <Route path=":updateId" element={<Update />}/>
+                      </Route>
                       <Route exact path='/form' element={<Form />} />
                     </Routes>                  
                   </Router>            

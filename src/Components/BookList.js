@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import Update from './Update.js'
 import Form from './Form.js'
 
@@ -21,28 +21,30 @@ const obituarioList = ({obituario, setObituario, obituarios, setListUpdated}) =>
 
     const handleUpdate = ID => {
 
-        //  // if (titulo === '' || autor === '' || edicion <= 0){
-        // //     alert("Todos los campos son obligatorios")
-        // //     return
-        // // }
-        // const requestInit = {
-        //     method: 'PUT',
-        //     headers: {'Content-Type': 'application/json'},
-        //     body: JSON.stringify(obituario)          
+        console.log(ID + " Este es el ID")
 
+         // if (titulo === '' || autor === '' || edicion <= 0){
+        //     alert("Todos los campos son obligatorios")
+        //     return
         // }
+        const requestInit = {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(obituario)          
 
-        // fetch('http://localhost:9000/api/' + ID, requestInit)
-        // .then(res => res.text())
-        // .then(res => console.log(res))
+        }
 
-        // // setObituario({
-        // //     titulo: '',
-        // //     autor: '',
-        // //     edicion: 0
-        // // })
+        fetch('http://localhost:9000/api/' + ID, requestInit)
+        .then(res => res.text())
+        .then(res => console.log(res))
 
-        // setListUpdated(true);
+        // setObituario({
+        //     titulo: '',
+        //     autor: '',
+        //     edicion: 0
+        // })
+
+        setListUpdated(true);
  
     }
 
@@ -90,10 +92,10 @@ const obituarioList = ({obituario, setObituario, obituarios, setListUpdated}) =>
 
                         <td>
                             <div className="mb-3">
-                                <button onClick={() => handleDelete(obituario.ID)} className="btn btn-danger">Delete</button>
+                                <button onClick={() => handleDelete(obituario.OID)} className="btn btn-danger">Delete</button>
                             </div>
                             <div className="mb-3">
-                                <Link to='update'><button className="btn btn-dark">Update</button></Link>
+                                <Link to={'/update/' + obituario.OID} key={obituario.OID}><button onClick={() => handleUpdate(obituario.OID)} className="btn btn-dark">Update</button></Link>
                             </div>
                         </td>
                     </tr>  
