@@ -1,9 +1,14 @@
 import React from 'react';
+import Form from './Form';
 
 function Update() {
     return(
 
-        <div>UPDATE</div>
+        <div>UPDATE
+
+            <Form />
+        </div>
+        
         
         // // if (titulo === '' || autor === '' || edicion <= 0){
         // //     alert("Todos los campos son obligatorios")

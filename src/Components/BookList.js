@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Update from './Update.js'
+import Form from './Form.js'
 
 const obituarioList = ({obituario, setObituario, obituarios, setListUpdated}) => {
 
@@ -50,10 +51,10 @@ const obituarioList = ({obituario, setObituario, obituarios, setListUpdated}) =>
             <thead>
                 <tr>
                     <th>OCODIGO_CLIENTE</th>
-                    <th>OnombresS</th>
+                    <th>ONOMBRES</th>
                     <th>OPAPELLIDO </th>
                     <th>OSAPELLIDO</th>
-                    <th>OID - ID</th>
+                    <th>OID</th>
                     <th>ODIR_VELACION</th>
                     <th>OCIUDAD</th>
                     <th>ODPTO</th>
@@ -92,7 +93,7 @@ const obituarioList = ({obituario, setObituario, obituarios, setListUpdated}) =>
                                 <button onClick={() => handleDelete(obituario.ID)} className="btn btn-danger">Delete</button>
                             </div>
                             <div className="mb-3">
-                                <button className="btn btn-dark">Update</button>
+                                <Link to='update'><button className="btn btn-dark" oid = "001">Update</button></Link>
                             </div>
                         </td>
                     </tr>  
