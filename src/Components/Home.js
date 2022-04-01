@@ -1,5 +1,4 @@
-import React, {Fragment, useState, useEffect} from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import React, {useState, useEffect} from 'react';
 import Navbar from './Navbar';
 import BookList from './BookList';
 import Form from './Form';
@@ -25,10 +24,11 @@ function Home(){
         estado: ''
       })    
       
-      
       const [obituarios, setObituarios] = useState([]) 
     
       const [listUpdated, setListUpdated] = useState(false);
+      
+      
     
       useEffect(() => {
         const getObituarios = () => {
@@ -41,9 +41,9 @@ function Home(){
       }, [listUpdated])      
     
 
-    return(
+    return(               
             
-                <div className="container">                    
+                <div className="container">                                    
                     <Navbar brand="Tabla Obituario"/>
                     <div className="row">
                         <div className="col-7"> 
@@ -52,15 +52,15 @@ function Home(){
                         </div>
                         
                     </div>
-                    <div className="row">
+                    {/* <div className="row">
                         <div className="col-5">
                             <h2 style={{textAlign: "center"}}>Book Form</h2>
                             <Form obituario={obituario} setObituario={setObituario} />
                         </div>
-                    </div>
+                    </div> */}
                 </div>          
 
     )
 }
 
-export default Home()
+export default Home
