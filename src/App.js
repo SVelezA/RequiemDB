@@ -3,8 +3,8 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Navbar from './Components/Navbar';
 import BookList from './Components/BookList';
 import Form from './Components/Form';
-import Update from './Components/Update';
-import Home from './Components/Home';
+// import Update from './Components/Update';
+// import Home from './Components/Home';
 
 
 function App() {  
@@ -27,7 +27,7 @@ function App() {
       estado: ''
     })
     
-    const [obituarios, setObituarios] = useState([]) 
+    const [obituarios, setObituarios] = useState([]);
   
     const [listUpdated, setListUpdated] = useState(false);
   
@@ -43,9 +43,7 @@ function App() {
 
 
 
-  return( 
-
-    
+  return(   
 
           
               <div className="container">
@@ -65,11 +63,11 @@ function App() {
                           <Form obituario={obituario} setObituario={setObituario} />
                       </div>
                   </div>
-                <Router>
+                {/* <Router>
                   <Routes>
                     <Route exact path='/' element={<Home />} />
                   </Routes>
-                 </Router>                
+                 </Router>                 */}
               </div>
           
 
