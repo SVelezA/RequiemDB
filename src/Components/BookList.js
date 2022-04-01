@@ -51,7 +51,7 @@ const obituarioList = ({obituario, setObituario, obituarios, setListUpdated}) =>
             <thead>
                 <tr>
                     <th>OCODIGO_CLIENTE</th>
-                    <th>ONOMBRES</th>
+                    <th>onombres</th>
                     <th>OPAPELLIDO </th>
                     <th>OSAPELLIDO</th>
                     <th>OID</th>
@@ -93,7 +93,7 @@ const obituarioList = ({obituario, setObituario, obituarios, setListUpdated}) =>
                                 <button onClick={() => handleDelete(obituario.ID)} className="btn btn-danger">Delete</button>
                             </div>
                             <div className="mb-3">
-                                <Link to='update'><button className="btn btn-dark" oid = "001">Update</button></Link>
+                                <Link to='update'><button className="btn btn-dark">Update</button></Link>
                             </div>
                         </td>
                     </tr>  
