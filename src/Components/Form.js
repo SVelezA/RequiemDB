@@ -56,11 +56,7 @@ const Form = ({obituario, setObituario}, props) => {
 
     }
 
-    let params = useParams();
-    console.log(params + " PARAMS")
-   
-
-    console.log(params.updateID + " este es el ID de PARAMS");
+    const params = useParams();   
 
     return(
         
